@@ -1,0 +1,19 @@
+# Works around the Intel e1000e "Detected Hardware Unit Hang" problem on mini PCs, where the
+# onboard NIC freezes under load and the node drops off the network until it's rebooted.
+# Turning off the NIC's offload features avoids it at a tiny CPU cost.
+#
+# Install:  cp disable-nic-offload.service /etc/systemd/system/
+#           sed -i 's/eno1/<your-nic>/' /etc/systemd/system/disable-nic-offload.service
+#           systemctl daemon-reload && systemctl enable --now disable-nic-offload
+[Unit]
+Description=Disable NIC offloading on eno1 (e1000e hang workaround)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/sbin/ethtool -K eno1 tso off gso off gro off
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
