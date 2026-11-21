@@ -14,6 +14,12 @@ A two-node **Proxmox VE 9** cluster built from second-hand mini PCs, with a **QD
                                backup server 10.0.0.20)
 ```
 
+![Node summary](images/pve-node-summary.png)
+
+Both nodes and every guest, seen from Proxmox Datacenter Manager:
+
+![Cluster in Datacenter Manager](images/pdm-cluster.png)
+
 ## What's in here
 
 | Path | What it does |
@@ -67,8 +73,8 @@ Enable the QEMU guest agent on every VM (`qm set <id> --agent enabled=1`, then a
 
 | Node | Box | RAM | Storage |
 |---|---|---|---|
-| pve1 | HP mini PC, 6-core | 32 GB | NVMe (ZFS) + USB RAID enclosure passed to the NAS VM |
-| pve2 | HP mini PC, 6-core | 16 GB | NVMe (ZFS) |
+| pve1 | HP EliteDesk Mini, i5-12500T (6C/12T) | 32 GB | NVMe (ZFS) + USB RAID enclosure passed to the NAS VM |
+| pve2 | HP ProDesk Mini (6C/12T) | 16 GB | NVMe (ZFS) |
 | pbs | Lenovo ThinkCentre M700 Tiny | 16 GB | SATA SSD (OS) + USB HDD (backups) |
 
 ## License
