@@ -73,8 +73,8 @@ Enable the QEMU guest agent on every VM (`qm set <id> --agent enabled=1`, then a
 
 | Node | Box | RAM | Storage |
 |---|---|---|---|
-| pve1 | HP EliteDesk Mini, i5-12500T (6C/12T) | 32 GB | NVMe (ZFS) + USB RAID enclosure passed to the NAS VM |
-| pve2 | HP ProDesk Mini (6C/12T) | 16 GB | NVMe (ZFS) |
+| pve1 | HP Elite Mini 600 G9, i5-12500T (6C/12T) | 32 GB | NVMe (ZFS) + USB RAID enclosure passed to the NAS VM |
+| pve2 | HP ProDesk 600 G6 Mini, i5-10500T (6C/12T) | 16 GB | NVMe (ZFS) |
 | pbs | Lenovo ThinkCentre M700 Tiny | 16 GB | SATA SSD (OS) + USB HDD (backups) |
 
 ## License
